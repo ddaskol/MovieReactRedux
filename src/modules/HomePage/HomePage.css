@@ -1,0 +1,25 @@
+.homePage
+{
+    padding: 0 30px 0;
+    margin-bottom: 50px;
+}
+
+.homePage_slider
+{
+    margin-bottom: 50px;
+}
+
+
+/* MovieList Component */
+.homePage_body
+{
+    margin-bottom: 50px;
+
+}
+
+.homePage_title
+{
+    font-size: 30px;
+    margin-bottom: 30px;
+
+}

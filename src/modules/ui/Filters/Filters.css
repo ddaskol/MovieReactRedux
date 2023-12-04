@@ -1,0 +1,99 @@
+/* Q:
+1 дописати адаптив для блоку .filters
+1.1 прописати для .filter_item border-radius при .filter_item_content:hover
+1.2 display: none для інших .filter_item при .filter_item:hover */
+
+.filters
+{
+    display: grid;
+    grid-template: 1fr / repeat(auto-fit, minmax(220px, 1fr));
+
+}
+
+.filters_filter
+{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.filter_item
+{
+    width: 100%;
+    height: 60px;
+    /* margin-right: 20px; */
+
+    border-radius: 33px;
+
+    background: none;
+}
+
+.filter_item,
+.filter_item_content a
+{
+    border: 3px solid rgba(255, 255, 255, 0.356);
+
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.filter_item_content
+{
+    position: absolute;
+
+    display: none;
+
+    min-width: 100%;
+    background-color: #16181E;
+    border-radius: 33px;
+
+    z-index: 2;
+}
+
+.filters_filter:hover .filter_item_content
+{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .filters_filter:active+.filters_filter:not(active)
+{
+    display: none;
+} */
+
+.filter_item:hover
+{
+    border-radius: 33px 33px 0 0;
+}
+
+
+
+.filter_item:hover,
+.filter_item_content a:hover
+{
+    background: #000;
+}
+
+.filter_item:hover,
+.filter_item:not(hover),
+.filter_item_content a:hover,
+.filter_item_content a:not(hover)
+{
+    transition: .2s ease;
+}
+
+.filter_item_content a
+{
+    display: block;
+
+    border: 3px solid rgba(255, 255, 255, 0.356);
+    padding: 20px;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+.filter_item_content a:last-child
+{
+    border-radius: 0 0 33px 33px;
+}

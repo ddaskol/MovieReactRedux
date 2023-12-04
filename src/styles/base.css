@@ -1,0 +1,14 @@
+#root
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    /* margin: 0 auto; */
+    min-height: 100vh;
+    overflow: hidden;
+
+    background-color: #16181E;
+    color: #fff;
+
+}

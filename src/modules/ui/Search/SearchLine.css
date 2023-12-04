@@ -1,0 +1,35 @@
+.searchLine
+{
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    height: 40px;
+    background-color: #21242D;
+
+    color: #5E6067;
+    font-size: 18px;
+    line-height: 30px;
+    align-items: center;
+
+    border: none;
+    border-radius: 10px;
+    padding: 0 15px;
+    margin: 0 20px 0 20px;
+
+    outline: none;
+}
+
+.searchLine::placeholder
+{
+    color: #5E6067;
+}
+
+@media screen and (min-width: 767px)
+{
+    .searchLine
+    {
+        grid-column: 3/4;
+
+        margin: 0 0 0 20px;
+    }
+}

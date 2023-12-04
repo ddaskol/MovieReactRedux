@@ -1,11 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App/App';
-// import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import {
+  RouterProvider,
+} from "react-router-dom"
+import store from './config/store'
+import { Provider } from 'react-redux'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import router from './config/router';
+
+ReactDOM.render(
+  <RouterProvider router={router} />
+  , document.getElementById("root")
+)
+
+// Q: як зібрати разом і роутер і провайдер стор
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+
+//   <React.StrictMode>
+//     <Provider store={store}>
+
+
+//     </Provider>
+//   </React.StrictMode>
+// );
+

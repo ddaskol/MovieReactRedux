@@ -1,0 +1,24 @@
+.header
+{
+    /* padding: 30px; */
+
+    align-items: center;
+    display: grid;
+    grid-template: 1fr/ 45% minmax(auto, 50%) minmax(auto, 5%);
+    /* justify-content: space-around; */
+    margin-bottom: 50px;
+
+    padding: 20px 20px 0 20px;
+
+    z-index: 20;
+}
+
+@media screen and (min-width: 767px)
+{
+    .header
+    {
+        grid-template: 1fr/ 30% minmax(auto, 35%) minmax(auto, 35%);
+        padding: 30px 30px 0 30px;
+
+    }
+}

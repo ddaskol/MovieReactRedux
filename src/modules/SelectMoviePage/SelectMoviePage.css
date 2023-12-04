@@ -1,0 +1,29 @@
+.SelectMoviePage
+{
+    padding: 0 30px 30px;
+}
+
+.SelectMoviePage_body
+{}
+
+.SelectMoviePage_filters
+{
+    padding-left: 20px;
+    padding-bottom: 100px;
+}
+
+.SelectMoviePage_title
+{
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 0.6rem;
+
+    margin-bottom: 30px;
+}
+
+.SelectMoviePage_films
+{
+    margin-top: 200px;
+    padding-left: 20px;
+
+}

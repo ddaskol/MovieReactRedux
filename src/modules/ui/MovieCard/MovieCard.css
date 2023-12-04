@@ -1,0 +1,168 @@
+.moviecard
+{
+    position: relative;
+
+    height: 300px;
+    background: rgba(255, 255, 255, 0);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 18px;
+    margin: 0 0 40px 0;
+}
+
+.moviecard_backImg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 18px;
+
+}
+
+.darken_image
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 18px;
+}
+
+.darken_image:hover
+{
+    opacity: 0.3;
+    transition: .5s linear;
+}
+
+.darken_image:not(hover)
+{
+    transition: .5s linear;
+
+}
+
+.moviecard_info
+{
+    padding: 7px 0 0 7px;
+    position: relative;
+
+    font-weight: bold;
+
+    padding: 20px;
+}
+
+.moviecard_title
+{
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.moviecard_rateStar
+{
+    margin-bottom: 10px;
+}
+
+.moviecard_ganre
+{
+    font-size: 17px;
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+/* sliderSetting MovieCard   */
+.moviecard.cardToSlider
+{
+    height: 400px;
+}
+
+.moviecard.cardToSlider .moviecard_title
+{
+    font-size: 30px;
+}
+
+.moviecard.cardToSlider .moviecard_rateStar,
+.moviecard.cardToSlider .moviecard_ganre
+{
+    display: none;
+}
+
+/* MoviePage Settings MovieCard  */
+
+.moviecard.cardToMoviePage
+{
+    position: static;
+    height: 100vh;
+    display: grid;
+    align-items: end;
+    grid-template-rows: 40% 20%;
+
+    padding: 0 0 100px 100px;
+
+}
+
+.moviecard.cardToMoviePage div
+{
+    margin-bottom: 20px;
+}
+
+.moviecard.cardToMoviePage .moviecard_title
+{
+    font-size: 60px;
+}
+
+.moviecard.cardToMoviePage .moviecard_ganre
+{
+    font-size: 30px;
+}
+
+.moviecard.cardToMoviePage .moviecard_description
+{
+    font-size: 40px;
+    font-weight: normal;
+}
+
+
+
+
+
+@media screen and (min-width: 675px)
+{
+    .moviecard
+    {
+        height: 400px;
+        margin: 20px;
+    }
+
+    /* sliderSetting MovieCard   */
+    .moviecard.cardToSlider
+    {
+        height: 500px;
+    }
+
+    .moviecard.cardToSlider .moviecard_title
+    {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width:1475px)
+{
+
+    /* sliderSetting MovieCard   */
+    .moviecard.cardToSlider
+    {
+        height: 600px;
+    }
+}
