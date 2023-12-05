@@ -54,12 +54,12 @@
 
 .moviecard_info
 {
-    padding: 7px 0 0 7px;
     position: relative;
+    max-width: 500px;
 
     font-weight: bold;
 
-    padding: 20px;
+    padding: 20px 0 0 20px;
 }
 
 .moviecard_title
@@ -81,10 +81,23 @@
     margin-bottom: 10px;
 }
 
+.moviecard_description
+{
+    display: none;
+}
+
+
+
+
 /* sliderSetting MovieCard   */
 .moviecard.cardToSlider
 {
     height: 400px;
+}
+
+.moviecard.cardToSlider .moviecard_info
+{
+    padding: 60px 0 0 60px;
 }
 
 .moviecard.cardToSlider .moviecard_title
@@ -103,38 +116,42 @@
 .moviecard.cardToMoviePage
 {
     position: static;
-    height: 100vh;
+    height: 70vh;
     display: grid;
-    align-items: end;
-    grid-template-rows: 40% 20%;
+    align-items: start;
+    grid-template-rows: 60% 40%;
 
-    padding: 0 0 100px 100px;
-
+    padding: 0px;
 }
 
 .moviecard.cardToMoviePage div
 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .moviecard.cardToMoviePage .moviecard_title
 {
-    font-size: 60px;
+    font-size: 40px;
 }
 
 .moviecard.cardToMoviePage .moviecard_ganre
 {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .moviecard.cardToMoviePage .moviecard_description
 {
-    font-size: 40px;
+    display: block;
+    font-size: 15px;
     font-weight: normal;
 }
 
-
-
+/* only for MoviePage many buttons  */
+.moviecard_buttons
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 190px);
+}
 
 
 @media screen and (min-width: 675px)
@@ -153,6 +170,40 @@
 
     .moviecard.cardToSlider .moviecard_title
     {
+        display: block;
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 769px)
+{
+    .moviecard_buttons
+    {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 220px);
+    }
+}
+
+@media screen and (min-width:1024px)
+{
+
+    /* MoviePage Settings MovieCard  */
+    .moviecard.cardToMoviePage
+    {
+
+        align-items: end;
+        grid-template-rows: 60% 40%;
+
+        padding: 0 0 40px 40px;
+    }
+
+    .moviecard.cardToMoviePage div
+    {
+        margin-bottom: 20px;
+    }
+
+    .moviecard.cardToMoviePage .moviecard_title
+    {
         font-size: 50px;
     }
 }
@@ -165,4 +216,20 @@
     {
         height: 600px;
     }
+
+
+    /* MoviePage Settings MovieCard  */
+    .moviecard.cardToMoviePage
+    {
+
+        grid-template-rows: 60% 40%;
+
+        padding: 0 0 100px 100px;
+    }
+
+    .moviecard.cardToMoviePage .moviecard_title
+    {
+        font-size: 60px;
+    }
+
 }

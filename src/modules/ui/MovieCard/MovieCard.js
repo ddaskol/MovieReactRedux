@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonPlus from "../ButtonPlus/ButtonPlus";
+import { MoviePageButtons } from "./MovieCardButtons/MovieCardButtons";
 
 import "./MovieCard.css"
 
@@ -23,13 +23,16 @@ const MovieCard = ({
                 <div className="moviecard_ganre">
                     <p>Ganres</p>
                 </div>
-                <div className=".moviecard_description">
+                <div className="moviecard_description">
                     <p>Sit magna ad sint cillum ullamco ea nostrud nostrud eu exercitation ut consequat. Ut labore consequat deserunt irure anim cupidatat nisi exercitation ea esse.</p>
                 </div>
             </div>
-            <ButtonPlus
-                type={type}
-            />
+            <div className="moviecard_buttons">
+                <MoviePageButtons
+                    type={type}
+                />
+            </div>
+
         </div>
     )
 }
