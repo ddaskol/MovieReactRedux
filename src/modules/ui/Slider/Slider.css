@@ -2,3 +2,31 @@
 {
     margin-bottom: 50px;
 }
+
+.slider .swiper-button-next,
+.slider .swiper-button-prev
+{
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.419);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.slider .swiper-button-next:hover,
+.slider .swiper-button-next:hover
+{
+
+    background: rgba(165, 165, 165, 0.7);
+}
+
+
+.slider .swiper-button-next:hover,
+.slider .swiper-button-prev:hover,
+.slider .swiper-button-next:not(hover),
+.slider .swiper-button-prev:not(hover)
+{
+    transition: .5s ease;
+
+}

@@ -1,14 +1,13 @@
 import React from "react";
 import "./WatchListPage.css"
 
-import MovieCard from "../ui/MovieCard/MovieCard";
-import MovieList from "../ui/MovieList/MovieList";
-import MoviePage from "../ui/MoviePage/MoviePage";
+import ActiveMovie from "../ActiveMovie/ActiveMovie";
 
 const WatchListPage = () => {
     return (
         <div className="watchList">
-            <MoviePage />
+            {/* <ActiveMovie /> */}
+            <div className="">clear</div>
         </div>
     )
 }

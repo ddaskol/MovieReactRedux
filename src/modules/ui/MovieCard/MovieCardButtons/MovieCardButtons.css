@@ -1,4 +1,4 @@
-.moviePageButtons
+.movieCardButtons
 {
     position: relative;
 
@@ -12,7 +12,7 @@
 
 
 
-.moviePageButtons_img
+.movieCardButtons_img
 {
     width: 100%;
     height: 100%;
@@ -25,39 +25,39 @@
     align-items: center;
 }
 
-.moviePageButtons_img img
+.movieCardButtons_img img
 {
     width: 50%;
     height: 50%;
 }
 
-.moviePageButtons_darken
+.movieCardButtons_darken
 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0.5;
     border-radius: 18px;
 
     z-index: inherit;
 }
 
-.moviePageButtons_darken:hover
+.movieCardButtons_darken:hover
 {
-    background-color: rgb(112, 112, 112);
+    background: rgba(165, 165, 165, 0.9);
 }
 
-.moviePageButtons_darken:hover,
-.moviePageButtons_darken:not(hover)
+.movieCardButtons_darken:hover,
+.movieCardButtons_darken:not(hover)
 {
     transition: .5s ease;
 }
 
-/*  moviePageButtons  sliderSetting */
-.moviecard.cardToSlider .moviePageButtons
+/*  movieCardButtons  sliderSetting */
+.moviecard.cardToSlider .movieCardButtons
 {
     width: 200px;
     display: grid;
@@ -71,13 +71,13 @@
     display: none;
 }
 
-.moviePageButtons_text
+.movieCardButtons_text
 {
     display: none;
 }
 
-.moviecard.cardToSlider .moviePageButtons_text,
-.moviecard.cardToMoviePage .moviePageButtons_text
+/* .moviecard.cardToSlider .movieCardButtons_text,
+.moviecard.cardToMoviePage .movieCardButtons_text
 {
     display: flex;
     align-items: center;
@@ -85,20 +85,20 @@
 
     font-size: 25px;
     font-weight: bold;
-}
+} */
 
-/* moviePageButtons Settings MovieCard  */
+/* movieCardButtons Settings MovieCard  */
 
-.moviecard.cardToMoviePage .moviePageButtons
+/* .moviecard.cardToMoviePage .movieCardButtons
 {
     width: 180px;
     height: 50px;
     display: grid;
     grid-template-columns: 35% 50%;
 
-}
+} */
 
-.moviePageButtons_img img
+.movieCardButtons_img img
 {
     width: 50%;
     height: auto;
@@ -106,16 +106,16 @@
 
 @media screen and (min-width: 769px)
 {
-    .moviecard.cardToMoviePage .moviePageButtons
+    /* .moviecard.cardToMoviePage .movieCardButtons
     {
         width: 200px;
         height: 65px;
         display: grid;
         grid-template-columns: 35% 50%;
 
-    }
+    } */
 
-    .moviePageButtons_img img
+    .movieCardButtons_img img
     {
         width: 50%;
         height: 50%;

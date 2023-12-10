@@ -1,16 +1,29 @@
 import React from "react";
-import MovieCard from "../MovieCard/MovieCard";
 import "./MovieList.css"
 
+import MovieCard from "../MovieCard/MovieCard";
+import { useMovies } from "./useMovies";
+
 const MovieList = () => {
+    const { movies } = useMovies({ index: 0 })
+
     return (
         <div className="movieList">
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
+            {
+                movies?.map(movie => (
+                    <MovieCard
+                        type="cardToMovieList"
+                        key={movie.id}
+                    >
+                        <MovieCard.Image></MovieCard.Image>
+                        <MovieCard.Info>
+                            <MovieCard.Title to={movie.id}>{movie.title}</MovieCard.Title>
+                            <MovieCard.Genre>{movie.genre}</MovieCard.Genre>
+                        </MovieCard.Info>
+                        <MovieCard.Buttons />
+                    </MovieCard>
+                ))
+            }
         </div>
     )
 }

@@ -6,8 +6,16 @@ import HomePage from "../modules/HomePage/HomePage"
 import SelectMoviePage from "../modules/SelectMoviePage/SelectMoviePage"
 import WatchListPage from "../modules/WatchListPage/WatchListPage"
 import ErrorPage from "../modules/ui/ErrorPage/ErrorPage";
+import { fetchMovies } from "../api/fetchMovies";
+import ActiveMovie from "../modules/ActiveMovie/ActiveMovie";
 
 
+export async function movieLoader({ params }) {
+    const movies = await fetchMovies()
+
+    const movie = movies.find(({ id }) => id == params.id)
+    return { movie }
+}
 
 const router = createBrowserRouter([
     {
@@ -26,6 +34,11 @@ const router = createBrowserRouter([
             {
                 path: "/watchlist",
                 element: <Suspense fallback={<>Loading</>}><WatchListPage /></Suspense>
+            },
+            {
+                path: "/movie/:id",
+                element: <Suspense fallback={<>Loading</>}><ActiveMovie /></Suspense>,
+                loader: movieLoader,
             },
         ]
     }

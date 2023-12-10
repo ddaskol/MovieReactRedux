@@ -4,6 +4,8 @@
     grid-template-columns: minmax(200px, 100%);
 }
 
+
+
 @media screen and (min-width: 675px)
 {
     .movieList

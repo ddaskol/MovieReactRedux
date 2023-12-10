@@ -87,7 +87,11 @@
 }
 
 
-
+.moviecard.cardToMovieList
+{
+    margin: 20px;
+    height: 500px;
+}
 
 /* sliderSetting MovieCard   */
 .moviecard.cardToSlider
@@ -105,6 +109,26 @@
     font-size: 30px;
 }
 
+.moviecard_title_Link
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.moviecard_title_Link:hover
+{
+    /* font-size: 55px; */
+    color: rgb(248, 202, 141);
+    transform: translate (30deg, 200deg);
+}
+
+.moviecard_title_Link:hover,
+.moviecard_title_Link:not(hover)
+{
+    transition: .3s linear;
+}
+
+
 .moviecard.cardToSlider .moviecard_rateStar,
 .moviecard.cardToSlider .moviecard_ganre
 {
@@ -119,7 +143,7 @@
     height: 70vh;
     display: grid;
     align-items: start;
-    grid-template-rows: 60% 40%;
+    /* grid-template-rows: 50% 20%; */
 
     padding: 0px;
 }
@@ -147,22 +171,22 @@
 }
 
 /* only for MoviePage many buttons  */
-.moviecard_buttons
+/* .moviecard.cardToMoviePage .movieCardButtons
 {
     display: grid;
     grid-template-columns: repeat(auto-fit, 190px);
-}
+} */
 
 
 @media screen and (min-width: 675px)
 {
-    .moviecard
+    .moviecardF
     {
         height: 400px;
         margin: 20px;
     }
 
-    /* sliderSetting MovieCard   */
+    /*    SLIDER    Setting MovieCard   */
     .moviecard.cardToSlider
     {
         height: 500px;
@@ -177,10 +201,10 @@
 
 @media screen and (min-width: 769px)
 {
-    .moviecard_buttons
+    .moviecard.cardToMoviePage .movieCardButtons
     {
         display: grid;
-        grid-template-columns: repeat(auto-fit, 220px);
+        grid-template-columns: repeat(auto-fit, 200px);
     }
 }
 
@@ -191,7 +215,7 @@
     .moviecard.cardToMoviePage
     {
 
-        align-items: end;
+        align-items: flex-start;
         grid-template-rows: 60% 40%;
 
         padding: 0 0 40px 40px;

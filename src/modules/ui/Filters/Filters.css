@@ -56,12 +56,9 @@
     flex-direction: column;
 }
 
-/* .filters_filter:active+.filters_filter:not(active)
-{
-    display: none;
-} */
 
-.filter_item:hover
+
+.filters_filter:hover .filter_item
 {
     border-radius: 33px 33px 0 0;
 }
