@@ -15,7 +15,7 @@ const MovieTitle = ({ to, children }) => {
 
 const MovieRating = ({ children }) => {
     return <div className="moviecard_rateStar">
-        {children}
+        Rating: {children}
     </div>
 }
 
@@ -24,6 +24,11 @@ const MovieGenre = ({ children }) => {
         <p>
             {children}
         </p>
+    </div>
+}
+const MovieDescription = ({ children }) => {
+    return <div className="moviecard_description">
+        {children}
     </div>
 }
 
@@ -42,7 +47,7 @@ const MovieImage = () => {
     </div>
 }
 const MovieButtons = () => {
-    return <div className="movieCardButtons">
+    return <div className="movieCardButtons_container">
         <MovieCardButtons
         // type={type}
         />
@@ -63,6 +68,7 @@ MovieCard.Info = MovieInfo
 MovieCard.Title = MovieTitle
 MovieCard.Rating = MovieRating
 MovieCard.Genre = MovieGenre
+MovieCard.Description = MovieDescription
 
 MovieCard.Image = MovieImage
 MovieCard.Buttons = MovieButtons

@@ -4,9 +4,11 @@ import "./MovieList.css"
 import MovieCard from "../MovieCard/MovieCard";
 import { useMovies } from "./useMovies";
 
-const MovieList = () => {
-    const { movies } = useMovies({ index: 0 })
+const MovieList = (props) => {
+    // {movies: moviesFromHook} ---> rename form "movies" to "moviesFromHook"
+    const { movies: moviesFromHook } = useMovies({ index: 0 })
 
+    const movies = props.movies || moviesFromHook
     return (
         <div className="movieList">
             {

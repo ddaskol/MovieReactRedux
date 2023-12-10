@@ -45,7 +45,7 @@ const Slider = ({ }) => {
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar]}
                     navigation
-                    spaceBetween={50}
+                    spaceBetween={500}
                     slidesPerView={1}
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}

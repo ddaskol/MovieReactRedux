@@ -8,6 +8,9 @@
     margin: 0 0 10px 10px;
 
     z-index: 10;
+
+    display: flex;
+
 }
 
 
@@ -21,6 +24,7 @@
     z-index: inherit;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -76,8 +80,8 @@
     display: none;
 }
 
-/* .moviecard.cardToSlider .movieCardButtons_text,
-.moviecard.cardToMoviePage .movieCardButtons_text
+.moviecard.cardToSlider .movieCardButtons_text,
+.moviecard.cardActiveMovie .movieCardButtons_text
 {
     display: flex;
     align-items: center;
@@ -85,18 +89,18 @@
 
     font-size: 25px;
     font-weight: bold;
-} */
+}
 
-/* movieCardButtons Settings MovieCard  */
+/* movieCardButtons Settings for ACTIVEMOVIEPAGE  */
 
-/* .moviecard.cardToMoviePage .movieCardButtons
+.moviecard.cardActiveMovie .movieCardButtons
 {
     width: 180px;
     height: 50px;
     display: grid;
     grid-template-columns: 35% 50%;
 
-} */
+}
 
 .movieCardButtons_img img
 {
@@ -106,14 +110,14 @@
 
 @media screen and (min-width: 769px)
 {
-    /* .moviecard.cardToMoviePage .movieCardButtons
+    .moviecard.cardActiveMovie .movieCardButtons
     {
         width: 200px;
         height: 65px;
         display: grid;
         grid-template-columns: 35% 50%;
 
-    } */
+    }
 
     .movieCardButtons_img img
     {

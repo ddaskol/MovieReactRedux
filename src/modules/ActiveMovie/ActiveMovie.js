@@ -20,13 +20,14 @@ const ActiveMovie = () => {
     return (
         <MovieCard
             key={movie.id}
-            type="cardToMoviePage"
+            type="cardActiveMovie cardActiveMovie"
         >
             <MovieCard.Image></MovieCard.Image>
             <MovieCard.Info>
                 <MovieCard.Title to={movie.id}>{movie.title}</MovieCard.Title>
-                <MovieCard.Rating>{movie.rating}</MovieCard.Rating>
+                <MovieCard.Rating>{movie.vote_average}</MovieCard.Rating>
                 <MovieCard.Genre>{movie.genre}</MovieCard.Genre>
+                <MovieCard.Description>{movie.overview}</MovieCard.Description>
             </MovieCard.Info>
             <MovieCard.Buttons />
         </MovieCard>
