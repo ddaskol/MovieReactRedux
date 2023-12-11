@@ -8,12 +8,18 @@ import WatchListPage from "../modules/WatchListPage/WatchListPage"
 import ErrorPage from "../modules/ui/ErrorPage/ErrorPage";
 import { fetchMovies } from "../api/fetchMovies";
 import ActiveMovie from "../modules/ActiveMovie/ActiveMovie";
+import { fetchMovie } from "../api/fetchApiMovies";
 
 
 export async function movieLoader({ params }) {
-    const movies = await fetchMovies()
+    // fetchMovie(params.id)
+    // const movies = await fetchMovies()
 
-    const movie = movies.find(({ id }) => id == params.id)
+    //now, instead of going through the entire array with movies, we make a request to the API through the fetchMovie function, which outputs 1 movie by id
+    const movie = await fetchMovie(params.id)
+    console.log(movie)
+
+    // const movie = movies.find(({ id }) => id == params.id)
     return { movie }
 }
 

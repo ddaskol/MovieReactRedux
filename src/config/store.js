@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import baseReducer from "../slices/base"
+import movieReducer from "../slices/movies"
 
 export default configureStore({
     reducer: {
-        base: baseReducer
+        movies: movieReducer
 
     }
 })

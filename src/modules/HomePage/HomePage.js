@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { fetchPopularMovies } from "../../api/fetchPopularMovies";
+import { useDispatch } from "react-redux";
+import { fetchPopularMovies } from "../../api/fetchApiMovies";
+import { setPopularMovies } from "../../slices/movies";
 import MovieCard from "../ui/MovieCard/MovieCard";
 import MovieList from "../ui/MovieList/MovieList";
 import { useMovies } from "../ui/MovieList/useMovies";
@@ -8,11 +10,12 @@ import Slider from "../ui/Slider/Slider";
 import "./HomePage.css"
 
 const HomePage = () => {
-    const [movies, setMovies] = useState([])
+
+    const dispatch = useDispatch()
     useEffect(() => {
         fetchPopularMovies()
             .then(movies => {
-                setMovies(movies)
+                dispatch(setPopularMovies(movies))
             })
 
     }, [])
@@ -25,9 +28,7 @@ const HomePage = () => {
                     <div className="homePage_title">
                         <h3>Popular on Host</h3>
                     </div>
-                    <MovieList
-                        movies={movies}
-                    />
+                    <MovieList />
                 </div>
             </div>
 

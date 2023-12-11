@@ -9,7 +9,9 @@ import { Provider } from 'react-redux'
 import router from './config/router';
 
 ReactDOM.render(
-  <RouterProvider router={router} />
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
   , document.getElementById("root")
 )
 

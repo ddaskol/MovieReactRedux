@@ -3,12 +3,15 @@ import "./MovieList.css"
 
 import MovieCard from "../MovieCard/MovieCard";
 import { useMovies } from "./useMovies";
+import { useSelector } from "react-redux";
 
-const MovieList = (props) => {
+const MovieList = () => {
     // {movies: moviesFromHook} ---> rename form "movies" to "moviesFromHook"
-    const { movies: moviesFromHook } = useMovies({ index: 0 })
+    // const { movies: moviesFromHook } = useMovies({ index: 0 })
 
-    const movies = props.movies || moviesFromHook
+    const movies = useSelector((state) => state.movies.popularMovies)
+
+    // const movies = props.movies || moviesFromHook
     return (
         <div className="movieList">
             {

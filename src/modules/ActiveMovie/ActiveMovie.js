@@ -17,6 +17,7 @@ const ActiveMovie = () => {
     useEffect(() => { }, [id])
 
 
+
     return (
         <MovieCard
             key={movie.id}

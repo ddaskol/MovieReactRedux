@@ -47,8 +47,8 @@ const Slider = ({ }) => {
                     navigation
                     spaceBetween={500}
                     slidesPerView={1}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log('slide change')}
+                // onSwiper={(swiper) => console.log(swiper)}
                 >
                     {
                         movies.map((movie) => (

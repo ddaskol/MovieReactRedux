@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchRecomendationMovies } from "../../api/fetchApiMovies";
+// import { fetchPopularMovies } from "../../api/fetchPopularMovies";
+import { setPopularMovies } from "../../slices/movies";
 import Filters from "../ui/Filters/Filters";
 import MovieList from "../ui/MovieList/MovieList";
 import "./SelectMoviePage.css"
 
 const SelectMoviePage = () => {
+
+    // const dispatch = useDispatch()
+    // useEffect(() => {
+    //     fetchRecomendationMovies()
+    //         .then(movies => {
+    //             dispatch(setPopularMovies(movies))
+    //         })
+
+    // }, [])
     return (
         <div className="SelectMoviePage">
             {/* <div className="SelectMoviePage_body"> */}
