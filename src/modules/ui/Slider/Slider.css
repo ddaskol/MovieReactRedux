@@ -1,24 +1,30 @@
 .slider
 {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
+    position: relative;
+
 }
 
 .slider .swiper-button-next,
 .slider .swiper-button-prev
 {
+
+    /* position: relative; */
     color: #fff;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.419);
-    padding: 10px;
+    width: 65px;
+    height: 65px;
+
+    overflow: hidden;
+
     border-radius: 10px;
+    background: rgb(0, 0, 0);
 }
 
 .slider .swiper-button-next:hover,
-.slider .swiper-button-next:hover
+.slider .swiper-button-prev:hover
 {
 
-    background: rgba(165, 165, 165, 0.7);
+    background: rgba(0, 0, 0, 0.642);
 }
 
 
@@ -28,5 +34,4 @@
 .slider .swiper-button-prev:not(hover)
 {
     transition: .5s ease;
-
 }

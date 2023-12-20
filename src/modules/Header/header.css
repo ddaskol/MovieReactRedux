@@ -1,24 +1,20 @@
 .header
 {
-    /* padding: 30px; */
-
     align-items: center;
     display: grid;
-    grid-template: 1fr/ 45% minmax(auto, 50%) minmax(auto, 5%);
-    /* justify-content: space-around; */
+    grid-template: 1fr/ 40% minmax(auto, 60%) auto;
     margin-bottom: 50px;
 
     padding: 20px 20px 0 20px;
-
     z-index: 20;
 }
+
 
 @media screen and (min-width: 767px)
 {
     .header
     {
-        grid-template: 1fr/ 30% minmax(auto, 35%) minmax(auto, 35%);
+        grid-template: 1fr/ 30% minmax(auto, 45%) minmax(auto, 25%);
         padding: 30px 30px 0 30px;
-
     }
 }

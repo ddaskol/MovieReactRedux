@@ -1,31 +1,52 @@
 import React from "react";
+import "./MovieCard.css"
+
 import { MovieCardButtons } from "./MovieCardButtons/MovieCardButtons";
 
-import "./MovieCard.css"
 import { Link } from "react-router-dom";
 
 
-const MovieTitle = ({ to, children }) => {
+//compound component 
+const MovieTitle = ({ to, children, clearQuery }) => {
     return <div className="moviecard_title">
         <h4>
-            <Link to={`/movie/${to}`} className="moviecard_title_Link">{children}</Link>
+            <Link to={`/movie/${to}`} className="moviecard_title_Link" onClick={clearQuery}>{children}</Link>
         </h4>
     </div>
 }
 
 const MovieRating = ({ children }) => {
+    const convertRating = (rating) => {
+        switch (true) {
+            case rating >= 8:
+                return <>&#128516;</>
+            case rating >= 6:
+                return <>&#128519;</>
+            case rating >= 5:
+                return <>&#128528;</>
+            default:
+                return <>&#128530;</>
+        }
+    }
+    const emojiCode = convertRating(children)
+
     return <div className="moviecard_rateStar">
-        Rating: {children}
+        <span title={children}>Rating {emojiCode}</span>
     </div>
 }
 
 const MovieGenre = ({ children }) => {
-    return <div className="moviecard_ganre">
-        <p>
-            {children}
-        </p>
+    return <div className="moviecard_genre">
+        {children}
+    </div>
+
+}
+const MovieGenre_block = ({ children }) => {
+    return <div className="moviecard_genres_block">
+        {React.Children.map(children, item => item)}
     </div>
 }
+
 const MovieDescription = ({ children }) => {
     return <div className="moviecard_description">
         {children}
@@ -40,16 +61,17 @@ export const MovieInfo = ({ children }) => {
     )
 }
 
+const MovieImage = ({ size = 'small', children }) => {
+    const sizePath = size === 'small' ? 'w500' : 'original'
 
-const MovieImage = () => {
-    return <div className="darken_image">
-        <img src="/images/loki.jpg" className="moviecard_backImg"></img>
-    </div>
+    return < div className="darken_image" >
+        <img src={`https://image.tmdb.org/t/p/${sizePath}${children}`} className="moviecard_backImg"></img>
+    </div >
 }
-const MovieButtons = () => {
+const MovieButtons = ({ id }) => {
     return <div className="movieCardButtons_container">
         <MovieCardButtons
-        // type={type}
+            id={id}
         />
     </div>
 }
@@ -64,6 +86,7 @@ const MovieCard = ({
         </div>
     )
 }
+MovieCard.GenreBlock = MovieGenre_block
 MovieCard.Info = MovieInfo
 MovieCard.Title = MovieTitle
 MovieCard.Rating = MovieRating

@@ -2,6 +2,7 @@ import React from "react";
 
 import Menu from "./Menu/Menu";
 import Logo from "./Logo/Logo"
+import SearchLine from "../ui/Search/SearchLine";
 
 import "./header.css"
 
@@ -10,6 +11,7 @@ const Header = () => {
         <header className="header">
             <Logo />
             <Menu />
+            <SearchLine />
         </header>
     )
 }

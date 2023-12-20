@@ -1,8 +1,8 @@
 .burger_menu
 {
     grid-column: 3/4;
-    display: flex;
-    justify-content: end;
+    /* display: flex; */
+    /* justify-content: end; */
 
     position: relative;
 }
@@ -50,8 +50,9 @@
     left: 0;
 
     text-align: center;
-    background-color: #16181E;
+    background-color: hsla(0, 0%, 0%, 0.9);
 }
+
 
 .mobile_menu .menu.additional
 {

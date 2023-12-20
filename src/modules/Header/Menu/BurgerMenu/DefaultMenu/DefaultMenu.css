@@ -4,40 +4,37 @@
     grid-column: 3/4;
 }
 
-.menu_list
-{}
-
-.menu_list_item
-{}
-
 .menu_link
 {
-    display: block;
     height: 50px;
-    text-decoration: none;
-    line-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     color: #fff;
     font-size: 20px;
     font-weight: 900;
+    text-decoration: none;
+    text-transform: lowercase;
 }
 
 .menu_link.active
 {
-    border-bottom: 3px solid #0B6866;
-    color: #0B6866;
+    border-top: 2px solid #00d5ff;
+    border-bottom: 2px solid #00d5ff;
 
+    color: #00d5ff;
 }
 
 .menu_link:hover
 {
-    transition: .2s ease;
-    color: #0B6866;
+    color: #00d5ff;
 }
 
 .menu_link:not(hover)
 {
-    transition: 0.2s ease;
+    transition: 0.3s ease;
 }
 
 @media screen and (min-width: 767px)

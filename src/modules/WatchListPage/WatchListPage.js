@@ -1,13 +1,12 @@
 import React from "react";
 import "./WatchListPage.css"
 
-import ActiveMovie from "../ActiveMovie/ActiveMovie";
+import MovieList from "../ui/MovieList/MovieList";
 
 const WatchListPage = () => {
     return (
         <div className="watchList">
-            {/* <ActiveMovie /> */}
-            <div className="">clear</div>
+            <MovieList dataKey="watchListMovies" />
         </div>
     )
 }

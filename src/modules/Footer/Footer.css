@@ -17,7 +17,8 @@
 
 .footer
 {
-    background: #000;
+    background: url(../../../public/images/footerBack.jpg);
+    background-attachment: fixed;
     padding: 20px 0;
     height: 500px;
 
@@ -26,6 +27,18 @@
     justify-items: center;
 
     position: relative;
+}
+
+.footer::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.722);
+    /* z-index: inherit; */
 }
 
 
@@ -39,12 +52,9 @@
 
     grid-row: 1 / 2;
     position: absolute;
-    /* left: -30; */
     display: flex;
     overflow: hidden;
-    /* position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+
 }
 
 .footer_startTextLine span
@@ -60,6 +70,9 @@
     display: grid;
     grid-template-columns: minmax(auto, 20%) minmax(auto, 60%) minmax(auto, 20%);
 
+    /* for footer::before(filter fontImage) */
+    position: inherit;
+
 }
 
 .centerItem_row
@@ -74,20 +87,8 @@
 {
     display: flex;
     justify-content: center;
-}
 
-.footer_logo_box
-{
-    max-width: 290px;
-    max-height: 27px;
-
-}
-
-.footer_logo img
-{
-    width: 100%;
-    height: 100%;
-
+    margin-top: 30px;
 }
 
 .footer_text
@@ -96,6 +97,7 @@
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     line-height: 110%;
+    opacity: 0.8;
     /* 22.4px */
 }
 
@@ -103,32 +105,34 @@
 {
     display: flex;
     justify-content: space-around;
+
 }
 
 .footer_contacts_link
 {
     color: #FFF;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+    font-family: Rubik Scribble;
+    font-size: 20px;
     line-height: 170%;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
     display: flex;
     justify-content: space-evenly;
-    /* 27.2px */
+
+    transition: .4s ease;
 
 }
 
 .footer_contacts_link:hover
 {
-    transition: 0.2s ease;
-    font-size: 18px;
+    color: #00d5ff;
 
 }
 
-.footer_contacts_link:not(hover)
+/* .footer_contacts_link:not(hover)
 {
     transition: 0.2s ease;
-}
+} */
 
 .footer_aboutInfo_EndItem
 {
@@ -141,6 +145,7 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 140%;
+    opacity: 0.5;
     /* 16.8px */
 }
 

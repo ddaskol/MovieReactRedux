@@ -2,16 +2,11 @@ import React from "react";
 import "./MovieList.css"
 
 import MovieCard from "../MovieCard/MovieCard";
-import { useMovies } from "./useMovies";
 import { useSelector } from "react-redux";
 
-const MovieList = () => {
-    // {movies: moviesFromHook} ---> rename form "movies" to "moviesFromHook"
-    // const { movies: moviesFromHook } = useMovies({ index: 0 })
+const MovieList = ({ dataKey }) => {
+    const movies = useSelector((state) => state.movies[dataKey])
 
-    const movies = useSelector((state) => state.movies.popularMovies)
-
-    // const movies = props.movies || moviesFromHook
     return (
         <div className="movieList">
             {
@@ -20,12 +15,14 @@ const MovieList = () => {
                         type="cardToMovieList"
                         key={movie.id}
                     >
-                        <MovieCard.Image></MovieCard.Image>
+                        <MovieCard.Image>{movie.poster_path}</MovieCard.Image>
                         <MovieCard.Info>
                             <MovieCard.Title to={movie.id}>{movie.title}</MovieCard.Title>
                             <MovieCard.Genre>{movie.genre}</MovieCard.Genre>
                         </MovieCard.Info>
-                        <MovieCard.Buttons />
+                        <MovieCard.Buttons
+                            id={movie.id}
+                        />
                     </MovieCard>
                 ))
             }

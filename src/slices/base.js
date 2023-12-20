@@ -35,13 +35,7 @@ export const baseSlice = createSlice({
 //     return name + lastName
 // })
 
-export const fullComp = createSelector([
-    state => state.base.value,
-    state => state.base.name,
-    state => state.base.lastName
-], (value, name, lastName) => {
-    return { value, name, lastName }
-})
+
 
 // Action creators are generated for each case reducer function
 export const { increment, decrement, incrementByAmount } = baseSlice.actions

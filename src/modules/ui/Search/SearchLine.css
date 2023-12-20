@@ -1,35 +1,133 @@
+:root
+{
+    --search-height: 50px;
+}
+
+.searchContainer
+{
+    width: 50px;
+    height: var(--search-height);
+    position: relative;
+
+
+    grid-column: 2/3;
+    grid-row: 1/1;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    justify-self: end;
+
+    border-radius: 10px;
+}
+
+.openContainer
+{
+    width: 100%;
+    border: 3px solid rgba(255, 255, 255, 0.42);
+    background-color: #000000b3;
+
+    animation: openSearch 1s ease;
+}
+
+@keyframes openSearch
+{
+    0%
+    {
+        transform: translateX(300px);
+    }
+
+    100%
+    {
+        transform: translateX(0px);
+    }
+}
+
+.searchButton
+{
+    background: none;
+    border: 3px solid rgba(0, 0, 0, 0);
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    padding: 11.5px;
+    height: 50px;
+}
+
+.miniSearch
+{
+    border: 3px solid rgba(255, 255, 255, 0.42);
+    background-color: #000000b3;
+}
+
+.searchButton span
+{
+    font-size: 21px;
+    color: rgba(255, 255, 255, 0.42);
+    transition: .3s ease;
+}
+
+.searchButton:hover span
+{
+    color: #00d5ff;
+}
+
 .searchLine
 {
-    grid-column: 2/3;
-    grid-row: 1/2;
+    width: 100%;
 
-    height: 40px;
-    background-color: #21242D;
-
-    color: #5E6067;
+    background: none;
+    color: #ffffff9f;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 40px;
     align-items: center;
 
-    border: none;
-    border-radius: 10px;
-    padding: 0 15px;
-    margin: 0 20px 0 20px;
-
     outline: none;
+    border: none;
+    padding: 0 15px;
 }
 
 .searchLine::placeholder
 {
-    color: #5E6067;
+    color: #ffffff57;
+}
+
+/*  */
+.searchedList
+{
+    width: 0;
+    height: auto;
+    overflow-y: scroll;
+
+
+    position: absolute;
+    top: var(--search-height);
+    right: -35px;
+
+    display: grid;
+    grid-template-columns: repeat(20, minmax(300px, 1fr));
+
+    padding: 15px 0;
+    border-radius: 15px 0 0 15px;
+
+    background-color: #0000008b;
+}
+
+.searchedList a
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+.openList
+{
+    width: 200%;
 }
 
 @media screen and (min-width: 767px)
 {
-    .searchLine
+    .searchContainer
     {
         grid-column: 3/4;
-
-        margin: 0 0 0 20px;
     }
 }

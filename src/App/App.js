@@ -8,7 +8,7 @@ import "../styles/base.css"
 import Header from "../modules/Header/Header"
 import Footer from "../modules/Footer/Footer"
 import { Outlet } from "react-router-dom";
-// import ButtonScrollToTop from "../modules/ui/ButtonScrollToTop/ButtonScrollToTop";
+import ButtonScrollToTop from "../modules/ui/ButtonScrollToTop/ButtonScrollToTop";
 
 
 
@@ -37,6 +37,7 @@ const App = () => {
             <Header />
             <Outlet />
             <Footer />
+            <ButtonScrollToTop />
         </>
     )
 }

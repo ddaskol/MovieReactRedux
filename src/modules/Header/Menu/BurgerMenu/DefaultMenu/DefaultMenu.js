@@ -25,8 +25,8 @@ const DefaultMenu = ({
         <div className={`menu ${type}`}>
             <ul className="menu_list">
                 {
-                    links.map(({ to, title }, index) => {
-                        return <li key={to + title} className="menu_list_item">
+                    links.map(({ to, title }) => {
+                        return <li key={to + title}>
                             <NavLink to={to} className="menu_link">
                                 {title}
                             </NavLink>

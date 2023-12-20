@@ -10,7 +10,6 @@ const Menu = () => {
         <>
             <DefaultMenu />
             <BurgerMenu />
-            <SearchLine />
         </>
     )
 }
