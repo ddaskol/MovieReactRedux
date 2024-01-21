@@ -10,7 +10,7 @@ export const MovieCardButtons = ({
     const [animated, setAnimated] = useState(false);
 
     const dispatch = useDispatch();
-    const isSelectedId = useSelector(state => state.movies.watchListMovies.find(movie => movie.id === id) !== undefined);
+    const isSelectedId = useSelector(state => state.movies.watchListMoviesIds.includes(id));
     const clickHandler = () => {
         const action = isSelectedId ? removeMovieWatchList : addMovieToWatchList;
         dispatch(action(id));

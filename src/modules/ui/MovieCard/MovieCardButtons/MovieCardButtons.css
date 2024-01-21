@@ -72,6 +72,11 @@
 
 }
 
+.movieCardButtons_icon span:hover
+{
+    color: #00d5ff;
+}
+
 .moviecard.cardToSlider .iconPlusCorrect
 {
     margin-left: -10px;

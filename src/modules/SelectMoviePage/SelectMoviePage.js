@@ -1,12 +1,23 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchRecommendationMovies } from "../../api/fetchApiMovies";
+import { useDispatch, useSelector } from "react-redux";
+import { filtersMovie } from "../../api/fetchApiMovies";
 import { setPopularMovies } from "../../slices/movies";
 import Filters from "../ui/Filters/Filters";
 import MovieList from "../ui/MovieList/MovieList";
 import "./SelectMoviePage.css"
 
 const SelectMoviePage = () => {
+    const { genre, country, year } = useSelector(state => state.movies.activeFilters)
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        filtersMovie({ genre, country, year })
+            .then(data => {
+                dispatch(setPopularMovies(data))
+            })
+
+    }, [genre, country, year])
+
 
 
     return (

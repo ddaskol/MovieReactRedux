@@ -55,7 +55,7 @@ const ActiveMovie = () => {
                 />
             </MovieCard>
             <Slider
-                type="toActiveMovie"
+            // type="toActiveMovie"
             />
         </>
     )

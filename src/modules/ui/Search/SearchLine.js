@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchMovies } from "../../../api/fetchApiMovies";
 import { clearSearchMovies, setSearchedMovies } from "../../../slices/movies";
 import SearchList from "./SearchList";
 
 import "./SearchLine.css"
+import { useOutsideClick } from "../../../helpers/hooks/useOutsideClick";
 
 const SearchLine = () => {
     const [query, setQuery] = useState('')
@@ -26,20 +27,26 @@ const SearchLine = () => {
                 })
         } else {
             dispatch(clearSearchMovies())
-
         }
-
     }, [query])
 
     const toggleFullSearch = () => {
-        setShowFullSearch(!showFullSearch)
+        setShowFullSearch(prevState => !prevState)
     }
 
+    const searchLineRef = useRef()
 
+    useOutsideClick(searchLineRef, () => {
+        console.log('bbbb')
+        setShowFullSearch(false)
+    })
+
+
+    console.log(showFullSearch)
     return (
-        <div className={`searchContainer animate__animated ${showFullSearch ? 'openContainer ' : ''}`}>
+        <div className={`searchContainer animate__animated ${showFullSearch ? 'openContainer ' : 'closeContainer'}`} ref={searchLineRef}>
             {!showFullSearch && (
-                <button className="searchButton miniSearch" onClick={toggleFullSearch}>
+                <button className="searchButton miniSearch" onClick={toggleFullSearch} >
                     <span class="material-symbols-outlined">
                         search
                     </span>

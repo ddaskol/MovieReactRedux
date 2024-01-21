@@ -6,17 +6,13 @@
 .SelectMoviePage_body
 {}
 
-.SelectMoviePage_filters
-{
-    padding-left: 20px;
-    padding-bottom: 100px;
-}
-
-
-
+.SelectMoviePage_filters,
 .SelectMoviePage_films
 {
-    margin-top: 200px;
     padding-left: 20px;
+}
 
+.SelectMoviePage_filters
+{
+    /* margin-bottom: 300px; */
 }

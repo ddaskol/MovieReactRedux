@@ -8,6 +8,7 @@ const SearchList = ({
     query: clearList
 }) => {
     const searchedMovies = useSelector((state) => state.movies.searchedMovies)
+
     return (
         <div className={`searchedList ${clearList ? 'openList' : ''}`}>
             {

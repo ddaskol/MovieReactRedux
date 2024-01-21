@@ -1,96 +1,112 @@
 /* Q:
 1 дописати адаптив для блоку .filters
-1.1 прописати для .filter_item border-radius при .filter_item_content:hover
+1.1 прописати для .filter_item border-radius при .filter_item:hover
 1.2 display: none для інших .filter_item при .filter_item:hover */
 
 .filters
 {
     display: grid;
     grid-template: 1fr / repeat(auto-fit, minmax(220px, 1fr));
-
+    margin-bottom: 58px;
 }
 
-.filters_filter
+
+
+.filters_body
 {
     position: relative;
+
+    padding: 0 10px;
     margin-bottom: 30px;
 }
 
-.filter_item
+.filters_body_btn
 {
     width: 100%;
     height: 60px;
-    /* margin-right: 20px; */
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.356);
     border-radius: 33px;
-
-    background: none;
-}
-
-.filter_item,
-.filter_item_content a
-{
-    border: 3px solid rgba(255, 255, 255, 0.356);
+    background: rgba(0, 0, 0, 0.573);
 
     color: #fff;
     font-size: 15px;
     font-weight: bold;
 }
 
-.filter_item_content
-{
-    position: absolute;
-
-    display: none;
-
-    min-width: 100%;
-    background-color: #16181E;
-    border-radius: 33px;
-
-    z-index: 2;
-}
-
-.filters_filter:hover .filter_item_content
-{
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-.filters_filter:hover .filter_item
+.filters_body_btn.bRadius
 {
     border-radius: 33px 33px 0 0;
 }
 
-
-
-.filter_item:hover,
-.filter_item_content a:hover
+.filters_body_btn.bColor
 {
+    border: 1px solid #00d5ff
+}
+
+.searchFiltersLine
+{
+    border: 1px solid rgba(255, 255, 255, 0.356);
+    height: 58px;
+
+}
+
+.filter_item
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 100%;
+    height: 300px;
+    padding: 0 20px 0 0;
+    overflow-x: scroll;
+
+    z-index: 2;
+}
+
+.filters_body:hover .filters_body_btn
+{
+    border: 1px solid #00d5ff;
     background: #000;
 }
 
-.filter_item:hover,
-.filter_item:not(hover),
-.filter_item_content a:hover,
-.filter_item_content a:not(hover)
+.filter_item div:hover
+{
+    background-color: #000;
+}
+
+.filters_body_btn:hover,
+.filters_body_btn:not(hover),
+.filter_item div:hover,
+.filter_item div:not(hover)
 {
     transition: .2s ease;
 }
 
-.filter_item_content a
+.filter_item div
 {
     display: block;
 
-    border: 3px solid rgba(255, 255, 255, 0.356);
+    background: rgba(0, 0, 0, 0.573);
+    border: 1px solid rgba(255, 255, 255, 0.356);
     padding: 20px;
 
     text-align: center;
     text-decoration: none;
 }
 
-.filter_item_content a:last-child
+.filter_item div:hover,
+.filter_item div.active
+{
+    border: 1px solid #00d5ff
+}
+
+.filter_item div:last-child
 {
     border-radius: 0 0 33px 33px;
 }
